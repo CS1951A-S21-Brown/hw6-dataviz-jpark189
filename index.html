@@ -5,6 +5,9 @@
         <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lora" />
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+        <link rel="shortcut icon" href="#">
         <!--Feel free to add more CSS files as needed-->
         <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
     </head>
@@ -15,6 +18,8 @@
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
         <div class="col-lg-6">
+            <button type="button" class="g1btn1" onclick="setData('Global_Sales')">Global Sales</button>
+            <button type="button" class="g1btn2" onclick="setData('NA_Sales')">North America Sales</button>
             <div id="graph1"></div>
             <div id="graph2"></div><br/>
         </div>
@@ -24,5 +29,56 @@
     </div>
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="q2_graph.js"></script>
+    <script type="text/javascript" src="q3_graph.js"></script>
+    <div class="written">
+        <h4>
+            1. Describe how your dashboard answers the questions presented. You don't have to address every question directly, but should at a high level address the main questions. (10 points)
+        </h4>
+
+        <h5>
+            My first graph is a bar graph which answers Question 1 and shows the top 10 video games (of all time) in the world. The metric used to determine these are global sales. To add interactivity to the graph, I implemented two buttons: “Global Sales” and “North America Sales.” Clicking on the second “North America Sales” would show the top 10 video games in North America. This would help my boss know the top 10 video games globally or in North America.
+            The subsequent set of pie charts (3) answers Question 2 by showing a pie chart of top genres in each of the three regions/countries: North America, Europe, and Japan. The legend to the right of each pie chart shows a list of all the genres in the dataset. Hovering over each section of the pie chart would display the genre name as well as its corresponding sales in the region. This would help my boss understand which genre is most popular in each region/country.
+            The last set of donut charts (12) answers Question 3 by displaying a donut chart of top publishers for each genre. Similarly to the pie charts, the donut charts contain legends (top publishers sorted in order of greatest to smallest sales) and a tooltip which shows up when the user hovers over each section. This would help my boss know which publisher to pick based on which genre a game is.
+        </h5>
+        
+        <h4>
+            2. List 3 reasons why D3 was helpful and improved your visualization (6 points)
+        </h4>
+
+        <h5>
+            D3 (Data-Driven Documents) allows for efficient handling of documents based on data. One reason why D3 is helpful in visualization is that it provides great flexibility. Using D3 allowed me to create visualizations the way I wanted to and I was not limited to bar, line, or column charts. I implemented donut charts by adjusting the inner radii of pie charts. I was also able to add a legend to each chart. D3 also enables the integration of HTML, CSS, and SVG. I made changes to my HTML and CSS files as I made use of D3. Finally, D3 is also useful in that it is fully compatible with browsers like Chrome. I was able to use the “Inspect” element on Chrome, and this rendered the process of debugging and visualizing easier. Overall, D3 makes building connections between data and graphics easy.
+        </h5>
+          
+        <h4>
+            3. List 3 reasons why D3 would not be the best tool for creating a visualization (6 points)
+        </h4>
+            
+        <h5>
+            One downside of D3 could be that DOM manipulation can be slow for large numbers of entries. Furthermore, SVG also has limitations in performance when dealing with large quantities of elements. I think another reason why D3 would not be the best tool for creating visualizations is that Javascript may has a learning curve and may not be the most intuitive language to many people.
+        </h5>
+            
+        <h4>  
+            Accessible Data Visualization
+        </h4>
+        <h4> 
+            4. Evaluate the accessibility of your dashboard based on the readings in the “Before you begin” section. What kinds of users might find this dashboard accessible and who might have more difficulty? What additional actions might you take to make this dashboard more accessible to all audiences? Your response should refer to at least one of the readings and be about 1 paragraph.
+        </h4>  
+        
+        <h5>
+            To make my dashboard accessible to as many people as possible, I first made note of the colors I used in my charts. For instance, in the first graph, I alternate between the colors “#E1BE6A” and “#40B0A6”; this is a pair of contrasting colors which maintain their contrast for people who are colorblind. I wanted to make it easier for people who are colorblind to distinguish between bars of similar lengths. I also had the values for the bars to the right of them, instead of implementing hover overlays that may have made them less accessible to certain audiences. 
+            However, I implemented hover overlays/tooltips for the values on the pie and donut charts, as fitting them on the chart seemed to make the chart too crowded. The second reading, “A Comprehensive Guide to Accessible Data Visualization”, mentions that one should avoid hover overlays and not require a user to hover over a graph to view the data output. This is also because assistive technology cannot accommodate such features. Nevertheless, to make it easier for certain users to understand each section of the pie/donut chart, I added a legend to the right, which shows the genres (for Question 2) and publishers (for Question 3).
+            Some additional actions that I might take to make the dashboard more accessible to all audiences are more descriptions on my graphs that can help users understand them better.
+        </h5>
+           
+        <h4>
+            5. Reflect on the stages of your design and implementation process when you could have taken steps to make your dashboard more accessible to all audiences. What are some factors that kept you from taking these steps? (a few sentences)
+        </h4>
+
+        <h5>
+            As aforementioned, the second reading, “A Comprehensive Guide to Accessible Data Visualization”, mentions that one should avoid hover overlays and not require a user to hover over a graph to view the data output. While I implemented hover overlays for the specific values, I made a legend next to each pie/donut chart to help people understand what each color on the donut/pie chart represents.
+            During the stages of my design and implementation process, I kept in mind that my dashboard needed to be as accessible as possible. The color palettes I use have colors that are easy to distinguish from each other, and my first graph is especially accessible to people who are colorblind.
+        </h5>
+    </div>
 </body>
 </html>
